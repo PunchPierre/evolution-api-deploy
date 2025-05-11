@@ -8,6 +8,7 @@ services:
       - "8080:8080"
     environment:
       - AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY}
+      - DATABASE_PROVIDER=memory
       - CORS_ORIGIN=*
       - LOG_LEVEL=error
     volumes:
