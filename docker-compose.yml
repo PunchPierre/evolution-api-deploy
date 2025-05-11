@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  evolution-api:
+    image: atendai/evolution-api:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY}
+      - CORS_ORIGIN=*
+      - LOG_LEVEL=error
+    volumes:
+      - evolution_instances:/evolution-api/instances
+      - evolution_store:/evolution-api/store
+
+volumes:
+  evolution_instances:
+  evolution_store:
