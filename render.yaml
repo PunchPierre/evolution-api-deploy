@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: evolution-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: docker-compose up
+    envVars:
+      - key: AUTHENTICATION_API_KEY
+        sync: false  # This tells Render to prompt for the value
